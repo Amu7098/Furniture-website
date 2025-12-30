@@ -1,13 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
 .banner {
-  background-image: linear-gradient(#0303039a, #00000007),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)),
     url("hero-banner.jpg");
-  height: 100vh;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,18 +30,75 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 104vh;
+  max-width: 1100px;
+  text-align: center;
+  padding: 2rem;
 }
 
 .banner-text h1 {
-  color: #122732;
-  letter-spacing: 6px;
+  color: #ffffff;
+  letter-spacing: 3px;
   font-weight: 700;
+  margin: 0 0 0.6rem 0;
+  font-size: clamp(1.6rem, 4.5vw, 3.4rem);
 }
 
 .banner-text h2 {
-  color: #ffffff;
-  letter-spacing: 3px;
-  font-weight: 630;
+  color: #f1f1f1;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  margin: 0 0 1.2rem 0;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
 }
+
+.shop-btn {
+  font-size: 1rem;
+  padding: 0.6rem 1.25rem;
+}
+
+/* Navbar logo size increase*/
+.navbar-brand {
+  font-weight: 700;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .banner {
+    padding: 3rem 1rem;
+    min-height: 60vh;
+  }
+
+  .banner-text h1 {
+    font-size: clamp(1.4rem, 5.5vw, 2.6rem);
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    padding: 2.5rem 0.75rem;
+    min-height: 55vh;
+  }
+
+  .banner-text {
+    padding: 1.2rem;
+  }
+
+  .banner-text h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .banner-text h2 {
+    font-size: 0.95rem;
+  }
+
+  .shop-btn {
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+  }
+}
+
+
 
