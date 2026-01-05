@@ -12,7 +12,7 @@ function item() {
       <div className="row">
         {productList.map((item) => (
           <div className="col-md-3 mt-5" key={item.id}>
-            <div className="card h-100">
+            <div className="card  h-100 shadow-sm border-0">
               <img src={item.image} className="card-img-top" alt={item.name} />
 
               <div className="card-body">
@@ -33,7 +33,7 @@ function item() {
                     />
                     <span className="fw-bold mx-4">{cartItems[item.id]}</span>
                     <FaPlusCircle
-                      className="text-success fs-1 ms-5"
+                      className="text-success fs-1 ms-3"
                       onClick={() => addToCart(item.id)}
                     />
                   </div>

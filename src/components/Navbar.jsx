@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { BsCart3 } from "react-icons/bs";
 
 function Navbar() {
   return (
@@ -34,6 +35,11 @@ function Navbar() {
               <NavLink className="nav-link" to="/Contact">
                 Contact
               </NavLink>
+              <NavLink className="nav-link ms-4" to="/Cart">
+                <BsCart3 className="fs-3" />
+              </NavLink>
+
+           
             </div>
           </div>
         </div>
