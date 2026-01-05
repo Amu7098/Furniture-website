@@ -12,100 +12,58 @@ body,
   margin: 0;
 }
 
+
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)),
-    url("hero-banner.jpg");
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 85vh; /* 85% of viewport height */
+  background-image: url('/hero-banner.jpg'); /* Replace with your banner image */
   background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay for readability */
 }
 
 .banner-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 1100px;
-  text-align: center;
-  padding: 2rem;
+  position: relative;
+  z-index: 2; /* ensures text appears above overlay */
 }
 
-.banner-text h1 {
-  color: #ffffff;
-  letter-spacing: 3px;
+.banner-title {
+  font-size: 2.5rem;
   font-weight: 700;
-  margin: 0 0 0.6rem 0;
-  font-size: clamp(1.6rem, 4.5vw, 3.4rem);
 }
 
-.banner-text h2 {
-  color: #f1f1f1;
-  letter-spacing: 1.8px;
-  font-weight: 700;
-  margin: 0 0 1.2rem 0;
-  font-size: clamp(1rem, 2.2vw, 1.4rem);
+.banner-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .shop-btn {
-  font-size: 1rem;
-  padding: 0.6rem 1.25rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
-/* Navbar logo size increase*/
-.navbar-brand {
-  font-weight: 700;
+.shop-btn:hover {
+  background-color: #444;
+  transform: translateY(-2px);
 }
 
-/* Responsive tweaks */
-@media (max-width: 992px) {
-  .banner {
-    padding: 3rem 1rem;
-    min-height: 60vh;
+/* Responsive Text */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2rem;
   }
-
-  .banner-text h1 {
-    font-size: clamp(1.4rem, 5.5vw, 2.6rem);
-    letter-spacing: 2px;
+  .banner-subtitle {
+    font-size: 1.2rem;
   }
 }
-
-@media (max-width: 576px) {
-  .banner {
-    padding: 2.5rem 0.75rem;
-    min-height: 55vh;
-  }
-
-  .banner-text {
-    padding: 1.2rem;
-  }
-
-  .banner-text h1 {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-  }
-
-  .banner-text h2 {
-    font-size: 0.95rem;
-  }
-
-  .shop-btn {
-    width: 100%;
-    max-width: 150px;
-    text-align: center;
-  }
-}
-
-.image-cart {
-  width: 150px;
-  height: 100px;
-  object-fit: contain;
-}
-
-
-
-
